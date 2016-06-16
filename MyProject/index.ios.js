@@ -11,6 +11,7 @@ import {
   Text,
   View,
   Image,
+  TextInput,
 } from 'react-native';
 
 class MyProject extends Component {
@@ -22,6 +23,11 @@ class MyProject extends Component {
         </Text>
 
         <Image source={require('./images/dbc.jpg')} />
+
+        <TextInput
+          placeholder="Enter some text"
+          style={styles.inputText}
+        />
       </View>
     );
   }
@@ -45,6 +51,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  inputText: {
+    borderWidth: 1,
+    borderRadius: 10,
+    height: 30,
+    backgroundColor: 'gray',
+    padding: 10,
   },
 });
 
