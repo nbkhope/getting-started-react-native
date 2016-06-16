@@ -25,8 +25,9 @@ class MyProject extends Component {
         <Image source={require('./images/dbc.jpg')} />
 
         <TextInput
-          placeholder="Enter some text"
+          placeholder="Enter your name"
           style={styles.inputText}
+          onChangeText={(text) => this.setState({ name: text })}
         />
       </View>
     );
@@ -55,9 +56,10 @@ const styles = StyleSheet.create({
   inputText: {
     borderWidth: 1,
     borderRadius: 10,
-    height: 30,
+    height: 40,
     backgroundColor: 'gray',
     padding: 10,
+    color: 'white',
   },
 });
 
