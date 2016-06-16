@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    color: '#191970',
+    fontWeight: 'bold',
   },
   instructions: {
     textAlign: 'center',
