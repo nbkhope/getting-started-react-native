@@ -15,11 +15,19 @@ import {
 } from 'react-native';
 
 class MyProject extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      name: "",
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to React Native <Text>{this.state.name}</Text>!
         </Text>
 
         <Image source={require('./images/dbc.jpg')} />
@@ -28,6 +36,7 @@ class MyProject extends Component {
           placeholder="Enter your name"
           style={styles.inputText}
           onChangeText={(text) => this.setState({ name: text })}
+          value={this.state.name}
         />
       </View>
     );
