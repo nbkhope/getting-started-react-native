@@ -8,7 +8,7 @@ Getting started with React Native for mobile development
 
 ## Quick Guide (iOS on Mac OS X)
 
-You will need to have Brew and Xcode already installed.
+You will need to have Brew and Xcode already installed. Make sure to also have the Chrome browser installed.
 
 ```
 # Install Node.js
