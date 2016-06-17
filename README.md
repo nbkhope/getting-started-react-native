@@ -2,6 +2,8 @@
 
 Getting started with React Native for mobile development
 
+![Readme Screenshot](screenshots/readme_screenshot.png)
+
 ## Presentation Slides
 
 [Click here](https://docs.google.com/presentation/d/1fQMSvoDdO-2ZY1dfsJRbrt3V3pcIKbQPt9OdgpZZL58/edit?usp=sharing)
