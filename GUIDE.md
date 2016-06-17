@@ -33,9 +33,9 @@ The overall structure of a component file is as follows:
 
 The first part of your component file will import all the modules necessary for React Native. The first import is typically the one to import `react` and the second import statement will import the built-in components from `react-native`. You will be changing the latter often as you implement new features and will be required to use new components in the application.
 
-The second part of the component file is the component class itself: the name of the class defines the name of the component. Note that all component classes must inherit from the **Component** class. JavaScript classes were introduced to ECMAScript 6, so you should get used to the new syntax. Many elements from React Native will be using the new syntax over the old one before ES6.
+The second part of the component file is the component class itself: the name of the class defines the name of the component. Note that all component classes must inherit from the **Component** class. JavaScript classes were introduced in ECMAScript 6, so you should get used to the new syntax. Many elements from React Native will be using the new syntax instead of the old one before ES6.
 
-Every component class must include the render() function, which will define how your component view will be rendered. All you have to do is define render() and return something that will be display to the screen:
+Every component class must include the **render()** function, which will define how your component view will be rendered. All you have to do is define render() and return something that will be display to the screen:
 
 ```
 class MyCustomComponent extends Component {
@@ -115,7 +115,7 @@ welcome: {
 
 Again, refresh your app and see the results. Try playing around with different parameters.
 
-One thing to note is that the preferred style model is using the flexbox model instead of the box model. You can read more about it [here](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+One thing to note is that the preferred style model is the flexbox model instead of the box model. You can read more about it [here](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 ### Adding an image
 
@@ -195,7 +195,7 @@ Also, do not forget to add the component TextInput to the import list at the beg
 
 #### Making the TextInput work
 
-The TextInput component is nice, but it does not quite work yet. You have to add an event listener that will set its value in the component state variable everytime you type anything. To do that, add the onChangeText attribute to the TextInput component:
+The TextInput component is nice, but it does not quite work yet. You have to add an event listener that will set its value in the component state variable everytime you type anything. To do that, add the onChangeText property to the TextInput component:
 
 ```
 <TextInput
@@ -205,7 +205,7 @@ The TextInput component is nice, but it does not quite work yet. You have to add
 />
 ```
 
-Whenever you type something in the input box, a function is called to set the state of the component. In this case, we have a function whose argument `text` is used as the variable that holds whatever you typed. In the function definition, you call the setState function to set the state variable with a key-value pair `name: text`. You will then be able to use the value in the InputText if you say `this.state.name`.
+Whenever you type something in the input box, a function is called to set the state of the component. In this case, we have a function whose argument `text` is used as the variable that holds whatever you typed. In the function definition, you call the **setState()** function to set the state variable with a key-value pair `name: text`. You will then be able to use the value typed in the InputText if you say `this.state.name`.
 
 Note that the arrow function `() => { ... }` is also something new in ES6. You can think of it as a simplified version of `function() { ... }`. You need only drop the function keyword and add a rocket symbol in between the argument list in parenthesis and the function definition under braces.
 
