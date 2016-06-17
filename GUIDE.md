@@ -14,11 +14,15 @@ Developing for the native environment using a language like Swift will require y
 
 Other interesting features in the simulator are also available: press `CMD + D` to see them.
 
+![Simulator Tools](screenshots/simulator_tools.png)
+
 You can enable `Live Reload` if you want the app to automatically refresh itself everytime you make changes to your source file and save it.
 
 To inspect the styles applied to your application, you can use `Show Inspector` and click the elements on the app screen to see their properties.
 
 Debugging the application is available through a web browser like Chrome if you enable it: `Debug JS Debugging`. This will open up a browser window which you will be able to Inspect and see the Console output coming from your app. Alternatively, you can use the Xcode Simulator's built-in console under `Debug -> Open System Log...` in the menu for your application window.
+
+![Debugging with Chrome](screenshots/debugging_chrome.png)
 
 ## React Component File Overview
 
@@ -79,7 +83,6 @@ The above construct has no style. To add style to elements, just use the style a
 
 What you are doing is you are accessing the variable styles that holds the stylesheet. There are keys to that big object which you can use to define a specific style.
 
-
 ### Styling the container
 
 Let us go ahead and change the style for the container: make its background color `antiquewhite`:
@@ -98,6 +101,7 @@ const styles = StyleSheet.create({
 
 Save the file and take a look at your application. Refresh it with `CMD + R` if you do not have Live Reload enabled. The background color should have changed to antiquewhite. You can try different colors too, either using a color name, hex value, or rgb value.
 
+![Background Color](screenshots/container_bgcolor.png)
 
 ### Styling the welcome text
 
@@ -114,6 +118,8 @@ welcome: {
 ```
 
 Again, refresh your app and see the results. Try playing around with different parameters.
+
+![Welcome Message](screenshots/welcome_message.png)
 
 One thing to note is that the preferred style model is the flexbox model instead of the box model. You can read more about it [here](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
@@ -145,7 +151,7 @@ The image you included in the app might have been too big for the screen, so let
 
 ```
 <Image
-  source={require('./images/dbc.jpg')}
+  source={require('./images/atom.png')}
   style={styles.image}
 />
 ```
@@ -161,6 +167,8 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+![Image Component](screenshots/image_component.png)
 
 ### Adding a TextInput component
 
@@ -184,7 +192,7 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: 'gray',
     padding: 10,
-    color: white,
+    color: 'white',
   },
 });
 ```
@@ -193,9 +201,11 @@ Make sure you have a comma after a brace at the end of each style key-value defi
 
 Also, do not forget to add the component TextInput to the import list at the beginning of the file. Otherwise, you will get an error saying the component was not found.
 
+![TextInput Component](screenshots/textinput_component.png)
+
 #### Making the TextInput work
 
-The TextInput component is nice, but it does not quite work yet. You have to add an event listener that will set its value in the component state variable everytime you type anything. To do that, add the onChangeText property to the TextInput component:
+The TextInput component is nice, but it does not quite do much right now. We need to associate it with some variable so we can pass its value throughout the app. To do that, you have to add an event listener that will set the TextInput value to the component state variable every time you type anything. To do that, add the onChangeText property to the TextInput component:
 
 ```
 <TextInput
@@ -231,7 +241,7 @@ class MyProject extends Component {
 
 What you are doing is initializing the state of the component. You typically initialize it in the constructor function, right after calling super() to invoke its original definition from the Component parent class. You typically set all the "form" or input values you are going to need here. In this case, we only have name, but we could have many more, such as: description, favoriteMovie, etc.
 
-Now, add a value attribute to the TextInput component and associate it with the `name` property in the state variable:
+Now, add a value property to the TextInput component and associate it with the `name` in the state variable:
 
 ```
 <TextInput
@@ -242,7 +252,9 @@ Now, add a value attribute to the TextInput component and associate it with the 
 />
 ```
 
-Then, after the welcome message is over, just before the exclamation point, add a Text component with the name property that is stored in the state:
+The `value` property we added above will make sure the TextInput will start off with a value determined by the initial value of the `state` variable. This could be useful when you set the name in the state (in the constructor) to something other than empty value. Say, for example, in an edit page for a user profile where you have to start off with the form **already filled** with stored user information from a database.
+
+Now, after the welcome message is over, just before the exclamation point, add a Text component with the name property that is stored in the state:
 
 ```
 <Text style={styles.welcome}>
@@ -251,5 +263,7 @@ Then, after the welcome message is over, just before the exclamation point, add 
 ```
 
 Now, refresh your application and try typing something in the TextInput component. See how the welcome text changes and adds the name as you type it? Very cool!
+
+![Finished Example](screenshots/finished_example.png)
 
 That is it for this tutorial. Checkout the React Native documentation for more [components](https://facebook.github.io/react-native/) to try out. Have fun!
