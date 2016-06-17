@@ -139,6 +139,29 @@ import {
 } from 'react-native';
 ```
 
+#### Resizing the image
+
+The image you included in the app might have been too big for the screen, so let us add some style to fix the image dimensions. Add a style attribute to the Image component:
+
+```
+<Image
+  source={require('./images/dbc.jpg')}
+  style={styles.image}
+/>
+```
+
+Then, define the style in the stylesheet at the end of the file:
+
+```
+const styles = StyleSheet.create({
+  (...)
+  image: {
+    width: 196,
+    height: 196,
+  },
+});
+```
+
 ### Adding a TextInput component
 
 Text and image are nice, but we need a way to get input from the user. You can do so using a TextInput component. Add it under the Image component you just created:
