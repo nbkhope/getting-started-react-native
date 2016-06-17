@@ -125,7 +125,7 @@ Next, let us learn how to add images to the screen. Remove all the Text elements
 <Image source={require('./images/dbc.jpg')} />
 ```
 
-This will add an image that is located under the current directory, inside the images folder. I just saved an image from the Internet and called it `dbc.jpg`.
+This will add an image that is located under the current directory, inside the images folder. I just saved an image from the Internet and called it `dbc.jpg`. Make sure to create your own `images/` folder under the project directory and place an image inside. Also, note the forward slash `/` before the Image tag's closing bracket.
 
 If you refreshed you app, you might have gotten an error message saying Image was not found: this is because you have to require the Image component before you can use it. Add Image to the list of components at the top of the file:
 
@@ -138,3 +138,48 @@ import {
   Image,
 } from 'react-native';
 ```
+
+### Adding a TextInput component
+
+Text and image are nice, but we need a way to get input from the user. You can do so using a TextInput component. Add it under the Image component you just created:
+
+```
+<TextInput
+  placeholder="Enter your name"
+  style={styles.inputText}
+/>
+```
+
+Before you refresh your app, make sure to define the style for the TextInput component you just added. Inside styles, at the bottom of the file, add:
+
+```
+const styles = StyleSheet.create({
+  (...)
+  inputText: {
+    borderWidth: 1,
+    borderRadius: 10,
+    height: 40,
+    backgroundColor: 'gray',
+    padding: 10,
+    color: white,
+  },
+});
+```
+
+Make sure you have a comma after a brace at the end of each style key-value definition. It is safe to always add a comma instead of leaving it out even if it is the last key-value pair in the JavaScript object.
+
+#### Making the TextInput work
+
+The TextInput component is nice, but it does not quite work yet. You have to add an event listener that will set its value in the component state variable everytime you type anything. To do that, add the onChangeText attribute to the TextInput component:
+
+```
+<TextInput
+  placeholder="Enter your name"
+  style={styles.inputText}
+  onChangeText={(text) => this.setState({ name: text })}
+/>
+```
+
+Whenever you type something in the input box, a function is called to set the state of the component. In this case, we have a function whose argument `text` is used as the variable that holds whatever you typed. In the function definition, you call the setState function to set the state variable with a key-value pair `name: text`. You will then be able to use the value in the InputText if you say `this.state.name`.
+
+Note that the arrow function `() => { ... }` is also something new in ES6. You can think of it as a simplified version of `function() { ... }`. You need only drop the function keyword and add a rocket symbol in between the argument list in parenthesis and the function definition under braces.
