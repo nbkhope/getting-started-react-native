@@ -183,3 +183,44 @@ The TextInput component is nice, but it does not quite work yet. You have to add
 Whenever you type something in the input box, a function is called to set the state of the component. In this case, we have a function whose argument `text` is used as the variable that holds whatever you typed. In the function definition, you call the setState function to set the state variable with a key-value pair `name: text`. You will then be able to use the value in the InputText if you say `this.state.name`.
 
 Note that the arrow function `() => { ... }` is also something new in ES6. You can think of it as a simplified version of `function() { ... }`. You need only drop the function keyword and add a rocket symbol in between the argument list in parenthesis and the function definition under braces.
+
+#### Binding the TextInput value
+
+We now can get input from the user. How about we display his name in the welcome message as he is typing it? To do so, we will need to use the **state** of the component.
+
+Just before the render() function definition inside the component class, define the constructor() function as such:
+
+```
+class MyProject extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      name: "",
+    };
+  }
+
+  (...)
+}
+```
+
+What you are doing is initializing the state of the component. You typically initialize it in the constructor function, right after calling super() to invoke its original definition from the Component parent class. You typically set all the "form" or input values you are going to need here. In this case, we only have name, but we could have many more, such as: description, favoriteMovie, etc.
+
+Now, add a value attribute to the TextInput component and associate it with the `name` property in the state variable:
+
+```
+<TextInput
+  placeholder="Enter your name"
+  style={styles.inputText}
+  onChangeText={(text) => this.setState({ name: text })}
+  value={this.state.name}
+/>
+```
+
+Then, after the welcome message is over, just before the exclamation point, add a Text component with the name property that is stored in the state:
+
+```
+<Text style={styles.welcome}>
+  Welcome to React Native <Text>{this.state.name}</Text>!
+</Text>
+```
