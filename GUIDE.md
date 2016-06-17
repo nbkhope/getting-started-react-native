@@ -6,7 +6,7 @@ This guide covers creating a simple iOS application using React Native.
 
 After creating MyProject using `react-native init MyProject`, change to your project directory and run the project using `react-native run-ios`.
 
-You will get a simulator window from Xcode and a terminal window with the Node server. After the application has been loaded, you will get the following screen:
+You will get a simulator window from Xcode and a terminal window with the React packager. After the application has been loaded, you will get the following screen:
 
 ![Simulator Window](screenshots/simulator_window.png)
 
