@@ -30,7 +30,7 @@ class MyProject extends Component {
           Welcome to React Native <Text>{this.state.name}</Text>!
         </Text>
 
-        <Image source={require('./images/dbc.jpg')} />
+        <Image source={require('./images/atom.png')} />
 
         <TextInput
           placeholder="Enter your name"
