@@ -122,10 +122,10 @@ One thing to note is that the preferred style model is using the flexbox model i
 Next, let us learn how to add images to the screen. Remove all the Text elements after the welcome message and add an `Image` tag, like so:
 
 ```
-<Image source={require('./images/dbc.jpg')} />
+<Image source={require('./images/atom.png')} />
 ```
 
-This will add an image that is located under the current directory, inside the images folder. I just saved an image from the Internet and called it `dbc.jpg`. Make sure to create your own `images/` folder under the project directory and place an image inside. Also, note the forward slash `/` before the Image tag's closing bracket.
+This will add an image that is located under the current directory, inside the images folder. I just saved an image from the Internet and called it `atom.png`. Make sure to create your own `images/` folder under the project directory and place an image inside. Also, note the forward slash `/` before the Image tag's closing bracket.
 
 If you refreshed you app, you might have gotten an error message saying Image was not found: this is because you have to require the Image component before you can use it. Add Image to the list of components at the top of the file:
 
