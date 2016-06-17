@@ -168,6 +168,8 @@ const styles = StyleSheet.create({
 
 Make sure you have a comma after a brace at the end of each style key-value definition. It is safe to always add a comma instead of leaving it out even if it is the last key-value pair in the JavaScript object.
 
+Also, do not forget to add the component TextInput to the import list at the beginning of the file. Otherwise, you will get an error saying the component was not found.
+
 #### Making the TextInput work
 
 The TextInput component is nice, but it does not quite work yet. You have to add an event listener that will set its value in the component state variable everytime you type anything. To do that, add the onChangeText attribute to the TextInput component:
@@ -224,3 +226,7 @@ Then, after the welcome message is over, just before the exclamation point, add 
   Welcome to React Native <Text>{this.state.name}</Text>!
 </Text>
 ```
+
+Now, refresh your application and try typing something in the TextInput component. See how the welcome text changes and adds the name as you type it? Very cool!
+
+That is it for this tutorial. Checkout the React Native documentation for more [components](https://facebook.github.io/react-native/) to try out. Have fun!
