@@ -30,7 +30,10 @@ class MyProject extends Component {
           Welcome to React Native <Text>{this.state.name}</Text>!
         </Text>
 
-        <Image source={require('./images/atom.png')} />
+        <Image
+          source={require('./images/atom.png')}
+          style={styles.image}
+        />
 
         <TextInput
           placeholder="Enter your name"
@@ -61,6 +64,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  image: {
+    width: 196,
+    height: 196,
   },
   inputText: {
     borderWidth: 1,
