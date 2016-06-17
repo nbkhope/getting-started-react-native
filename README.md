@@ -37,3 +37,7 @@ react-native run-ios
 ```
 
 The entry point for your app will be in the file `index.ios.js`
+
+## Step-By-Step Guide (Building First App)
+
+[Click here](GUIDE.md)
