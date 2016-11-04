@@ -16,14 +16,11 @@ You will need to have Brew and Xcode already installed. Make sure to also have t
 # Install Node.js
 brew install node
 
+# Install Watchman
+brew install watchman
+
 # Install React Native Comand Line Tools
 npm install -g react-native-cli
-
-# Install Watchman
-brew install Watchman
-
-# Install Flow
-brew install flow
 ```
 
 I suggest you use [Atom](https://atom.io/) instead of Sublime due to better syntax highlighting for JavaScript.
