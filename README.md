@@ -37,6 +37,16 @@ react-native run-ios
 
 The entry point for your app will be in the file `index.ios.js`
 
+### Note: running the finished MyProject example in this repository
+
+If you wish to run the example app in this repository without creating your own project, **cd** to MyProject and run
+
+```
+npm install
+```
+
+That will install all the package dependencies necessary for the app. Then, follow the instructions above to call `react-native run-ios`.
+
 ## Step-By-Step Guide (Building First App)
 
 [Click here](GUIDE.md)
